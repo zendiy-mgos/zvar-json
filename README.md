@@ -18,33 +18,29 @@ Deserialize JSON strings into variant instances.
 ```c
 #include "mgos_zvar_json.h"
 
-// JSON to integer variant
-mgos_zvar_t i = mgos_zvar_json_scanf("234");
-// JSON to decimal variant
-mgos_zvar_t d = mgos_zvar_json_scanf("378.340");
-// JSON to boolean variant
-mgos_zvar_t b = mgos_zvar_json_scanf("true");
-// JSON to string variant
-mgos_zvar_t s = mgos_zvar_json_scanf("\"AAA\"");
+mgos_zvar_t i = mgos_zvar_json_scanf("234");      // JSON to integer
+mgos_zvar_t d = mgos_zvar_json_scanf("378.340");  // JSON to decimal
+mgos_zvar_t b = mgos_zvar_json_scanf("true");     // JSON to boolean
+mgos_zvar_t s = mgos_zvar_json_scanf("\"AAA\"");  // JSON to string
 ```
 Deserialize a JSON object into a dictionary (this requires the [ZenVar Dictionary library](https://github.com/zendiy-mgos/zvar-dic) to be included in your `mos.yml` file). 
 ```c
 #include "mgos_zvar_dic.h"
 #include "mgos_zvar_json.h"
 
-/* 
-{
-  "Name": "Mark",
-  "Fhater": {
-    "Name": "Gregory",
-    "Age": 80
-  },
-  "Age": 46
-} */
+/* {
+      "Name": "Mark",
+      "Fhater": {
+        "Name": "Gregory",
+        "Age": 80
+      },
+      "Age": 46
+    }
+*/
 const char *json = "{\"Name\":\"Mark\",\"Fhater\":{\"Name\":\"Gregory\",\"Age\":80},\"Age\":46}";
 mgos_zvar_t dic = mgos_zvar_json_scanf(json);
 ```
-Serialize variant instances to JSON format.
+Serialize a variant instance to JSON.
 ```c
 #include "mgos_zvar_json.h"
 
@@ -53,7 +49,7 @@ char *json = json_asprintf("%M", json_printf_zvar, var);
 printf("JSON: %s", json); // JSON: 122.200000
 free(json);
 ```
-Serialize a dictionary to JSON format (this requires the [ZenVar Dictionary library](https://github.com/zendiy-mgos/zvar-dic) to be included in your `mos.yml` file). 
+Serialize a dictionary to JSON (this requires the [ZenVar Dictionary library](https://github.com/zendiy-mgos/zvar-dic) to be included in your `mos.yml` file). 
 ```c
 #include "mgos_zvar_dic.h"
 #include "mgos_zvar_json.h"
