@@ -59,7 +59,7 @@ mgos_zvar_add_key(dic, "Name", mgos_zvar_new_str("Mark"));
 mgos_zvar_add_key(dic, "Weigth", mgos_zvar_new_decimal(102.44));
 mgos_zvar_add_key(dic, "Enable", mgos_zvar_new_bool(true));
 char *json = json_asprintf("%M", json_printf_zvar, dic);
-printf("JSON: \"%s\"", json); // JSON: {"Name":"Mark","Weigth":102.440000,"Enable":true}
+printf("JSON: %s", json); // JSON: {"Name":"Mark","Weigth":102.440000,"Enable":true}
 free(json);
 ```
 ## C/C++ API Reference
