@@ -79,7 +79,7 @@ int json_printf_zvar(struct json_out *out, va_list *ap);
 A helper `%M` callback for [Frozen printing APIs](https://github.com/cesanta/frozen) that prints the provided variant instance. Consumes `mgos_zvar_t var`. Returns number of bytes printed.
 ```c
 // Example
-mgos_zvar_t var = mgos_zvar_new_str("\"Mark\"");
+mgos_zvar_t var = mgos_zvar_new_str("Mark");
 char *json = json_asprintf("%M", json_printf_zvar, var);
 ```
 ## To Do
