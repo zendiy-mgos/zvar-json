@@ -67,7 +67,7 @@ free(json);
 ```c
 mgos_zvar_t mgos_zvar_json_scanf(const char *json);
 ```
-Returns the variant instance deserialized from the provided JSON string, or `NULL` if error. The returned instance must be deallocated using `mgos_zvar_free` (more details [here](https://github.com/zendiy-mgos/zvar#mgos_zvar_free)).
+Returns the variant instance deserialized from the provided JSON string, or `NULL` if error. The returned instance must be deallocated using `mgos_zvar_free()` (more details [here](https://github.com/zendiy-mgos/zvar#mgos_zvar_free)).
 
 |Parameter||
 |--|--|
