@@ -62,8 +62,8 @@ char *json = json_asprintf("%M", json_printf_zvar, dic);
 printf("JSON: %s", json); // JSON: {"Name":"Mark","Weigth":102.440000,"Enable":true}
 free(json);
 ```
-## C/C++ API Reference
-### mgos_zvar_json_scanf()
+## C/C++ APIs Reference
+### mgos_zvar_json_scanf
 ```c
 mgos_zvar_t mgos_zvar_json_scanf(const char *json);
 ```
@@ -72,7 +72,7 @@ Returns the variant instance deserialized from the provided JSON string, or `NUL
 |Parameter||
 |--|--|
 |json|The string in JSON format to deserialize.|
-### json_printf_zvar()
+### json_printf_zvar
 ```c
 int json_printf_zvar(struct json_out *out, va_list *ap);
 ```
@@ -85,6 +85,3 @@ char *json = json_asprintf("%M", json_printf_zvar, var);
 ## To Do
 - Implement serialization/deserialization of variant arrays.
 - Implement javascript APIs for [Mongoose OS MJS](https://github.com/mongoose-os-libs/mjs).
-
-
-
